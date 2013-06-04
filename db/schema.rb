@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412025638) do
+ActiveRecord::Schema.define(:version => 20130416021433) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,39 @@ ActiveRecord::Schema.define(:version => 20130412025638) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "image"
+    t.integer  "uploaded_by"
+    t.integer  "project_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.integer  "author"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "projects_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+  end
+
+  add_index "projects_users", ["user_id", "project_id"], :name => "index_projects_users_on_user_id_and_project_id", :unique => true
 
   create_table "roles", :force => true do |t|
     t.string   "name"
