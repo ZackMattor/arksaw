@@ -16,5 +16,4 @@ ActiveAdmin.register Project do
     end 
     f.actions
   end
- 
 end

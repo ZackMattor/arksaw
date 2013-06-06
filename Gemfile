@@ -22,7 +22,6 @@ end
 
 gem 'devise'
 gem 'cancan'
-# gem 'activeadmin-cancan'
 gem 'jquery-rails'
 gem 'activeadmin'
 gem 'cancan'

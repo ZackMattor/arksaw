@@ -1,4 +1,8 @@
 Arksaw::Application.routes.draw do
+  get "photo/new"
+
+  get "photo/create"
+
   root to: "home#index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -7,7 +11,9 @@ Arksaw::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-  resources :projects
+  resources :projects do
+    resources :photos
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
