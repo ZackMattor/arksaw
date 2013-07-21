@@ -1,4 +1,4 @@
-ActiveAdmin.register BlogPosts do
+ActiveAdmin.register BlogPost do
   index do 
     column :title
     column :content 
@@ -11,6 +11,7 @@ ActiveAdmin.register BlogPosts do
       f.input :title 
       f.input :content 
       f.input :user 
+      f.input :project
     end 
     f.actions
   end

@@ -1,57 +1,41 @@
-    <!-- Main Page Content and Sidebar -->
+<!-- Main Page Content and Sidebar -->
 
-    <div class="row">
+<div class="row">
 
-      <!-- Main Blog Content -->
-      <div class="large-9 columns" role="content">
+  <!-- Main Blog Content -->
+  <div class="large-9 columns" role="content">
 
-        <% @posts.each do |post| %>
-        <article>
+    
+    <%= render partial: "blog_posts/post", collection: @posts %>
 
-          <h3><a href="#"><%= post.title %></a></h3>
-          <h6>Written by <a href="#"><%= post.user.email %></a> on <%= post.created_at %>.</h6>
+  </div>
 
-          <div class="row">
-            <div class="large-6 columns">
-            <p><%= post.content %></p>
-            </div>
-            <div class="large-6 columns">
-              <img src="http://placehold.it/400x240&text=[img]" />
-            </div>
-          </div>
-
-        </article>
-        <% end %>
-
-        <hr />
-      </div>
-
-      <!-- End Main Content -->
+  <!-- End Main Content -->
 
 
-      <!-- Sidebar -->
+  <!-- Sidebar -->
 
-      <aside class="large-3 columns">
+  <aside class="large-3 columns">
 
-        <h5>Categories</h5>
-        <ul class="side-nav">
-          <li><a href="#">News</a></li>
-          <li><a href="#">Code</a></li>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Fun</a></li>
-          <li><a href="#">Weasels</a></li>
-        </ul>
+    <h5>Categories</h5>
+    <ul class="side-nav">
+      <li><a href="#">News</a></li>
+      <li><a href="#">Code</a></li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Fun</a></li>
+      <li><a href="#">Weasels</a></li>
+    </ul>
 
-        <div class="panel">
-          <h5>Featured</h5>
-          <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-          <a href="#">Read More &rarr;</a>
-        </div>
-
-      </aside>
-
-      <!-- End Sidebar -->
+    <div class="panel">
+      <h5>Featured</h5>
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+      <a href="#">Read More &rarr;</a>
     </div>
 
-    <!-- End Main Content and Sidebar -->
+  </aside>
+
+  <!-- End Sidebar -->
+</div>
+
+<!-- End Main Content and Sidebar -->
 

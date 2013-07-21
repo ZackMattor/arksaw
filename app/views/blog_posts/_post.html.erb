@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="large-12 columns" role="content">
+    <article>
+      <h3><a href="#"><%= post.title %></a></h3>
+      <h6>Written by <a href="#"><%= post.user.email %></a>
+      <% if !post.project.nil? %>
+        for <%= link_to post.project.name, project_path(post.project) %>
+      <% end %>
+      on <%= post.created_at %>.</h6>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p><%= post.content %></p>
+        </div>
+        <div class="large-6 columns">
+          <img src="http://placehold.it/400x240&text=[img]" />
+        </div>
+      </div>
+    </article>
+  </div>
+</div>

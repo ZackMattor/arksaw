@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = BlogPosts.all
+    @posts = BlogPost.all
   end 
 end
-
-
