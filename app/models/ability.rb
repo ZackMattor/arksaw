@@ -10,12 +10,14 @@ class Ability
       can :manage, :all
     end
     if !user.role? :admin
-      can :manage, Project do |project|
-        project.author == user.id
-      end
+      if !user.id.nil?
+        can :manage, Project do |project|
+          project.author == user.id
+        end
 
-      can :create, Project do |project|
-        true
+        can :create, Project do |project|
+          true
+        end
       end
     end
     # Define abilities for the passed in user here. For example:

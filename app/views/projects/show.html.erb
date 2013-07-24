@@ -34,8 +34,15 @@
     <%= link_to "All Photos", "/projects/#{@project.id}/photos", class: 'button' %>
     <% if can? :manage, @project%>
       <%= link_to "Add Pictue", "/projects/#{@project.id}/photos/new", class: 'button' %>
+      <a href="#" class="button" data-reveal-id="editProject">Edit Project</a>
     <% end %>
   </div>
 </div>
 
 <%= render partial: "blog_posts/post", collection: @project.blog_posts %>
+
+<% if can? :manage, @project%>
+  <% content_for :modal do %>
+    <%= new_modal("Edit Project", "editProject", render(partial: "projects/forms/new", locals: {project: @project})) %>
+  <% end %>
+<% end %>

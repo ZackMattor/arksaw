@@ -1,11 +1,1 @@
-<div class="row">
-  <div class="large-12">
-    <p>Creating new project</p>
-    <%= simple_form_for @project do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.association :users, as: :check_boxes %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
-</div>
+<%= render partial: "projects/forms/new", locals: {project: @project}  %>
